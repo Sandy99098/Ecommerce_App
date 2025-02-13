@@ -17,10 +17,8 @@ A **Flutter-based mobile application** that serves as a complete e-commerce solu
 
 Include a few screenshots of your app to showcase the UI and features. Example:
 
-![Home Screen](
-  https://github.com/Sandy99098/Ecommerce_App/blob/main/screenshots/Home.png)
-![Product Details Page](https://github.com/YourUsername/ecommerce_app/blob/main/screenshots/ProductDetail.png)
-
+![Home Screen](https://github.com/Sandy99098/Ecommerce_App/blob/main/screenshots/Home.png)
+![Product Details Page](https://github.com/Sandy99098/Ecommerce_App/blob/main/screenshots/ProductDetail.png)
 ---
 
 ## Getting Started 🚗
