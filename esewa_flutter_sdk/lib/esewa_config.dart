@@ -10,14 +10,13 @@ class EsewaConfig {
     required this.secretId,
     required this.environment,
   });
-
 }
 
 extension ConfigExt on EsewaConfig {
   Map<String, dynamic> toMap() => {
-        "client_id": this.clientId,
-        "client_secret": this.secretId,
-        "environment": this.environment.parse(),
+        "client_id": clientId,
+        "client_secret": secretId,
+        "environment": environment.parse(),
       };
 }
 

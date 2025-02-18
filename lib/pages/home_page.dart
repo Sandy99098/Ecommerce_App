@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:ecommerce_app/pages/acessories_page.dart';
 import 'package:ecommerce_app/pages/home_appliances_page.dart';
 import 'package:ecommerce_app/pages/others_page.dart';
@@ -5,7 +6,6 @@ import 'package:ecommerce_app/pages/profile_page.dart';
 import 'package:ecommerce_app/pages/shoes_page.dart';
 import 'package:ecommerce_app/screen/cart_screen.dart';
 import 'package:ecommerce_app/screen/product_list.dart';
-import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -47,9 +47,6 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       body: SafeArea(
-        minimum: const EdgeInsets.symmetric(
-          vertical: 50,
-        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -84,15 +81,13 @@ class _HomePageState extends State<HomePage> {
                 scrollDirection: Axis.horizontal,
                 itemCount: filters.length,
                 itemBuilder: (BuildContext context, int index) {
-                  final category =
-                      filters.keys.elementAt(index); // Get category name
+                  final category = filters.keys.elementAt(index);
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          selectedCategory =
-                              category; // Update selected category
+                          selectedCategory = category;
                         });
                       },
                       child: Chip(

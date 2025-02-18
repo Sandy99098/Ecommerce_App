@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import '../models/product.dart';
 import '../cart_provider.dart';
 
-// esewa
 class ProductDetailsPage extends StatelessWidget {
   final Product product;
 
@@ -79,14 +78,12 @@ class ProductDetailsPage extends StatelessWidget {
             ),
             ElevatedButton.icon(
               onPressed: () {
-//  go to buying logic and screen
-
                 // Navigator.push(
                 //     context,
                 //     MaterialPageRoute(
                 //         builder: (context) => EsewaPaymentPage()));
                 Esewa esewa = Esewa();
-                esewa.pay();
+                esewa.pay(product: product);
               },
               icon: const Icon(
                 Icons.shopping_cart_checkout,

@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/constants/esewa.dart';
+import 'package:ecommerce_app/models/product.dart';
 import 'package:esewa_flutter_sdk/esewa_config.dart';
 import 'package:esewa_flutter_sdk/esewa_flutter_sdk.dart';
 import 'package:esewa_flutter_sdk/esewa_payment.dart';
@@ -6,23 +7,23 @@ import 'package:esewa_flutter_sdk/esewa_payment_success_result.dart';
 import 'package:flutter/material.dart';
 
 class Esewa {
-  void pay() {
+  void pay({required Product product}) {
     try {
       EsewaFlutterSdk.initPayment(
         esewaConfig: EsewaConfig(
-          environment: Environment.test, // Use Environment.live for production
+          environment: Environment.live,
           clientId: kEsewaClientId,
           secretId: kEsewaSecretKey,
         ),
         esewaPayment: EsewaPayment(
-          productId: "1d71jd81",
-          productName: "Product One",
-          productPrice: "20",
-          callbackUrl: '',
+          productId: product.id,
+          productName: product.name,
+          productPrice: product.price.toStringAsFixed(2),
+          callbackUrl: kEsewaCallbackUrl,
         ),
         onPaymentSuccess: (EsewaPaymentSuccessResult data) {
           debugPrint(":::SUCCESS::: => $data");
-          verify(data);
+          verifyPayment(data);
         },
         onPaymentFailure: (data) {
           debugPrint(":::FAILURE::: => $data");
@@ -36,7 +37,9 @@ class Esewa {
     }
   }
 
-  verify(EsewaPaymentSuccessResult result) {
-    // TODO after success call this function to verify transaction
+  void verifyPayment(EsewaPaymentSuccessResult result) {
+    // // TODO after success call this function to verify transaction
+
+    print("Payment Status  : ${result.message}");
   }
 }

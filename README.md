@@ -35,4 +35,4 @@ Make sure you have **Flutter** and **Dart** installed on your system. You can do
 
 1. First, clone the repository:
    ```bash
-   git clone https://github.com/YourUsername/ecommerce_app.git
+   git clone https://github.com/Sandy99098/ecommerce_app.git
